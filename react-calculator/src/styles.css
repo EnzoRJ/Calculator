@@ -1,0 +1,94 @@
+html,body {
+  margin: 1rem;
+  padding: 1vh;
+  font-family: sans-serif;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,79,106,1) 49%, rgba(10,151,176,1) 100%);
+}
+/*Background pane presenting results*/
+.wrapper {
+  padding-top: auto;
+  max-width: 420px;
+  min-height: 50vh;
+  margin: 0 auto;
+  background-color: #393e46;
+  color: white;
+}
+/*Buttons configuration*/
+button {
+  font-size: 2rem;
+  border: 1px solid #333;
+  cursor: pointer;
+  
+}
+.modifiers button {
+  background-color: #222831;
+  color: white;
+}
+.operations button {
+  background-color: orange;
+  width: 100px;
+  color: white;
+}
+.digits button {
+  background-color: #222831;
+  color: #0a97b0;
+}
+
+/* Rest of items configuration */
+.wrapper,
+.subgrid {
+  display: grid;
+}
+/* Grid setup specification*/
+.wrapper {
+padding: auto;
+  grid-template-areas:
+    "total total total total"
+    "modif modif modif oper"
+    "digit digit digit oper"
+    "digit digit digit oper"
+    "digit digit digit oper"
+    "digit digit digit oper";
+  grid-auto-columns: 1fr;
+}
+/*Area Setup*/
+
+/*Result Area*/
+.show-input {
+  grid-area: total;
+}
+/*Mod Buttons Area*/
+.modifiers {
+  grid-area: modif;
+}
+/*Operation Buttons Area*/
+.operations {
+  grid-area: oper;
+}
+/*Digits Area*/
+.digits {
+  grid-area: digit;
+}
+/*Input Setup*/
+.show-input {
+  padding: 1vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+
+  }
+  
+.modifiers {
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+
+}
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.digits button {
+  flex: 1 0 26%;
+}
